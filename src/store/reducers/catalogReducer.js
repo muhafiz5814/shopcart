@@ -74,5 +74,19 @@ const initialState = {
 
 
 export default (state = initialState, action) => {
-  return state
+  switch(action.type) {
+    case "SET_FILTER":{
+      return {
+        ...state, filter: action.filter
+      }
+    }
+    case "CLEAR_FILTER":{
+      return {
+        ...state, filter: null
+      }
+    }
+    default:{ 
+      return state
+    }
+  }
 }
