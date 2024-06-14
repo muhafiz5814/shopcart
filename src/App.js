@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Switch, Route, Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import CartButton from "./components/CartButton";
 import NavButton from "./components/NavButton";
 import Catalog from "./components/Catalog";
@@ -7,6 +8,9 @@ import Cart from "./components/Cart";
 import "./App.css";
 
 const App = () => {
+
+  const totalProducts = useSelector(state => state.cart.totalProducts)
+
   return (
     <BrowserRouter>
       <div className="root">
@@ -17,7 +21,7 @@ const App = () => {
               <NavButton label="CATALOG" />
             </Link>
             <Link to="/cart">
-              <CartButton items={0} />
+              <CartButton items={totalProducts} />
             </Link>
           </div>
         </div>
