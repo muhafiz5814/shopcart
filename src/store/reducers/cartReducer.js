@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
     }
     
     case "SET_QUANTITY": {
-      let revisedItems = state.items.map(item => item.code === action.code ? {...item, quantiy: action.quantity} : item)
+      let revisedItems = state.items.map(item => item.code === action.code ? {...item, quantity: action.quantity} : item)
 
       let revisedTotalProducts = revisedItems.reduce((prev, curr) => prev + curr.quantity, 0)
       
