@@ -10,7 +10,7 @@ export default (state = initialState, action) => {
       return state.items.find(item => item.code === action.product.code) ? {
         totalProducts: state.totalProducts + 1,
         totalCost: state.totalCost + action.product.cost,
-        items: state.items.map(item => item.code === action.product.code ? {...item, quantiy: item.quantity + 1} : item)
+        items: state.items.map(item => item.code === action.product.code ? {...item, quantity: item.quantity + 1} : item)
       } : {
         totalProducts: state.totalProducts + 1,
         totalCost: state.totalCost + action.product.cost,
